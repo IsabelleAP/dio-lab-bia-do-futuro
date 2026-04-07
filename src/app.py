@@ -60,7 +60,10 @@ def perguntar(msg):
 CONTEXTO DO CLIENTE:
 {contexto}
 
-Pergunta: {msg}
+HISTORICO DA CONVERSA:
+{historico_formatado}
+
+PERGUNTA ATUAL: {msg}
 """
     try:
         r = requests.post(
@@ -83,9 +86,17 @@ Pergunta: {msg}
 # INTERFACE
 st.title("GRIOF - Assistente Financeiro Inteligente")
 
+# MANTER HISTÓRICO NA TELA
+for msg in st.session_state.historico_chat:
+    st.chat_message(msg["role"]).write(msg["content"])
+
+# INPUT
 if pergunta := st.chat_input("Sua dúvida sobre finanças..."):
+    st.session_state.historico_chat.append({"role": "user", "content": pergunta_usuario})
     st.chat_message("user").write(pergunta)
 
-    with st.spinner("Analisando suas finanças..."):
+    with st.spinner("Analisando..."):
         resposta = perguntar(pergunta)
         st.chat_message("assistant").write(resposta)
+    st.session_state.historico_chat.append({"role": "assistant", "content": resposta})
+    st.chat_message("assistant").write(resposta)
