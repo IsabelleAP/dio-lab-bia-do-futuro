@@ -3,21 +3,15 @@ import pandas as pd
 import requests
 import streamlit as st
 
-# =========================
 # CONFIGURAÇÃO
-# =========================
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODELO = "gpt-oss:120b-cloud"  # se der erro, use "llama3"
+MODELO = "gpt-oss:120b-cloud"
 
-# =========================
-# MEMÓRIA (TEM QUE VIR NO INÍCIO)
-# =========================
+# MEMÓRIA
 if "historico_chat" not in st.session_state:
     st.session_state["historico_chat"] = []
 
-# =========================
 # CARREGAR DADOS
-# =========================
 with open("../data/perfil_investidor.json", "r", encoding="utf-8") as f:
     perfil = json.load(f)
 
@@ -27,9 +21,7 @@ with open("../data/produtos_financeiros.json", "r", encoding="utf-8") as f:
 transacoes = pd.read_csv("../data/transacoes.csv")
 historico = pd.read_csv("../data/historico_atendimento.csv")
 
-# =========================
 # CONTEXTO
-# =========================
 contexto = f"""
 CLIENTE: {perfil["nome"]}, {perfil["idade"]} anos, perfil {perfil["perfil_investidor"]}
 OBJETIVO: {perfil["objetivo_principal"]}
@@ -45,9 +37,7 @@ PRODUTOS DISPONÍVEIS:
 {json.dumps(produtos, indent=2, ensure_ascii=False)}
 """
 
-# =========================
 # SYSTEM PROMPT
-# =========================
 SYSTEM_PROMPT = """
 Você é o GRIOF (Gestão Responsável de Investimento e Organização Financeira), um agente financeiro inteligente especializado em ajudar clientes a organizar suas finanças, planejar metas e identificar padrões de gastos.
 
@@ -65,9 +55,6 @@ REGRAS:
 8. Não responda fora do escopo financeiro
 """
 
-# =========================
-# FUNÇÃO PRINCIPAL
-# =========================
 def perguntar(msg):
     # Montar histórico da conversa
     historico_formatado = "\n".join(
@@ -103,9 +90,7 @@ PERGUNTA ATUAL: {msg}
     except requests.exceptions.RequestException as e:
         return f"Erro ao conectar com o modelo: {e}"
 
-# =========================
 # INTERFACE
-# =========================
 st.title("GRIOF - Assistente Financeiro Inteligente")
 
 # Mostrar histórico
