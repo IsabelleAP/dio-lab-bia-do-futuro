@@ -8,14 +8,14 @@ OLLAMA_URL = "http://localhost:11434/api/generate"
 MODELO = "gpt-oss:120b-cloud"
 
 # CARREGAR OS DADOS
-with open("./data/perfil_investidor.json", "r", encoding="utf-8") as f:
+with open("../data/perfil_investidor.json", "r", encoding="utf-8") as f:
     perfil = json.load(f)
 
-with open("./data/produtos_financeiros.json", "r", encoding="utf-8") as f:
+with open("../data/produtos_financeiros.json", "r", encoding="utf-8") as f:
     produtos = json.load(f)
 
-transacoes = pd.read_csv("./data/transacoes.csv")
-historico = pd.read_csv("./data/historico_atendimento.csv")
+transacoes = pd.read_csv("../data/transacoes.csv")
+historico = pd.read_csv("../data/historico_atendimento.csv")
 
 
 # CONTEXTO
