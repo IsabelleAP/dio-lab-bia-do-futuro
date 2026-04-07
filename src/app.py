@@ -62,7 +62,7 @@ CONTEXTO DO CLIENTE:
 
 Pergunta: {msg}
 """
-try:
+    try:
         r = requests.post(
             OLLAMA_URL,
             json={
@@ -70,13 +70,15 @@ try:
                 "prompt": prompt,
                 "stream": False
             },
-            timeout=60)
+            timeout=60
+        )
 
         r.raise_for_status()
         return r.json().get("response", "Não consegui gerar uma resposta no momento.")
-    
+
     except requests.exceptions.RequestException as e:
         return f"Erro ao conectar com o modelo: {e}"
+
 
 # INTERFACE
 st.title("GRIOF - Assistente Financeiro Inteligente")
