@@ -137,5 +137,5 @@ No seu caso, sei que seu foco é reserva de emergência e seu perfil é moderado
 
 > Registre aqui ajustes que você fez nos prompts e por quê.
 
-- [Foi necessário adicionar explicitamente a regra de não responder perguntas fora do escopo financeiro, pois o modelo inicialmente respondia perguntas como clima e futebol, mesmo com contexto definido. Isso mostrou que apenas definir o papel não é suficiente, sendo importante reforçar restrições de comportamento.]
-- [A inclusão de exemplos de interação (few-shot prompting) melhorou a qualidade das respostas, tornando o agente mais consistente, mais aderente ao objetivo financeiro e menos propenso a gerar respostas genéricas ou fora do contexto.]
+- Foi necessário adicionar explicitamente a regra de não responder perguntas fora do escopo financeiro, pois o modelo inicialmente respondia perguntas como clima e futebol, mesmo com contexto definido. Isso mostrou que apenas definir o papel não é suficiente, sendo importante reforçar restrições de comportamento.
+- A inclusão de exemplos de interação (few-shot prompting) melhorou a qualidade das respostas, tornando o agente mais consistente, mais aderente ao objetivo financeiro e menos propenso a gerar respostas genéricas ou fora do contexto.

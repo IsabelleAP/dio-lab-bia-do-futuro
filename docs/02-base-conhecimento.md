@@ -17,14 +17,13 @@ Descreva se usou os arquivos da pasta `data`, por exemplo:
 
 > Você modificou ou expandiu os dados mockados? Descreva aqui.
 
-[
-* Inclusão de novos produtos financeiros:
+- Inclusão de novos produtos financeiros:
 Debêntures Incentivadas (renda fixa, risco médio, IPCA + 5%, aporte mínimo de R$ 1.000)
 ETF Ibovespa (renda variável, alto risco, aporte mínimo de R$ 50)
-* Expansão do histórico de transações:
+- Expansão do histórico de transações:
 Adição de registros entre 2025-10-26 e 2025-11-25
 Inclusão de diferentes categorias (lazer, alimentação, transporte, investimento e receitas)
-Manutenção da padronização das categorias para permitir análise automatizada ]
+Manutenção da padronização das categorias para permitir análise automatizada 
 
 ---
 
