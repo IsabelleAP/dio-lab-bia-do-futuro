@@ -68,6 +68,4 @@ O impacto dessa solução está em ajudar pessoas a desenvolverem maior controle
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
-[https://drive.google.com/drive/folders/1cD5lkrycwHh5FIV38dKAkmUJumtkHKuI?usp=sharing]
+> [https://drive.google.com/drive/folders/1cD5lkrycwHh5FIV38dKAkmUJumtkHKuI?usp=sharing]
